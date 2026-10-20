@@ -1,0 +1,428 @@
+/* KaptainKay — policy pages. Plain CSS, no dependencies. */
+
+:root {
+  color-scheme: light dark;
+  --paper: #faf8f3;
+  --card: #fffefb;
+  --ink: #272119;
+  --ink-soft: #5f584c;
+  --accent: #14594f;
+  --accent-strong: #0d423b;
+  --on-accent: #f6f3ec;
+  --rule: #e7e1d4;
+  --rule-strong: #c9c1ae;
+  --shadow: 0 1px 2px rgba(39, 33, 25, 0.05), 0 10px 28px rgba(39, 33, 25, 0.07);
+  --serif: "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --measure: 41rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #191713;
+    --card: #211e18;
+    --ink: #eae4d8;
+    --ink-soft: #b0a898;
+    --accent: #8fcfc3;
+    --accent-strong: #b5ded5;
+    --on-accent: #14231f;
+    --rule: #353026;
+    --rule-strong: #4a4436;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px rgba(0, 0, 0, 0.35);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  border-top: 4px solid var(--accent);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.04rem, 0.98rem + 0.3vw, 1.125rem);
+  line-height: 1.68;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 20;
+  padding: 0.65rem 1.1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 150ms ease;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.site-header-inner {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--accent-strong);
+}
+
+.site-nav {
+  display: flex;
+  gap: 0.2rem;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+}
+
+.site-nav a {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--accent-strong);
+  background: var(--card);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--accent-strong);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px var(--rule-strong);
+  background: var(--card);
+}
+
+/* ---------- Page body ---------- */
+
+.page {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: clamp(2.4rem, 6vw, 4.25rem) 1.25rem 4rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page > * {
+    animation: rise 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .page > *:nth-child(2) { animation-delay: 0.07s; }
+  .page > *:nth-child(3) { animation-delay: 0.14s; }
+  .page > *:nth-child(4) { animation-delay: 0.21s; }
+  .page > *:nth-child(5) { animation-delay: 0.28s; }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+.doc-header {
+  margin-bottom: 2.75rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0 0 1.1rem;
+  font-size: clamp(2.1rem, 1.5rem + 2.6vw, 3.05rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.018em;
+}
+
+.lede {
+  margin: 0;
+  max-width: 34ch;
+  font-size: clamp(1.08rem, 1rem + 0.5vw, 1.24rem);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* ---------- Document sections (numbered) ---------- */
+
+.doc {
+  counter-reset: section;
+}
+
+.doc section {
+  counter-increment: section;
+  margin: 0 0 2.6rem;
+}
+
+h2 {
+  margin: 0 0 0.9rem;
+  font-size: 1.34rem;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+
+.doc h2::before {
+  content: counter(section, decimal-leading-zero);
+  margin-right: 0.7rem;
+  font-family: var(--sans);
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  color: var(--accent);
+  vertical-align: 0.22em;
+}
+
+p {
+  margin: 0 0 1.05rem;
+}
+
+ul {
+  margin: 0 0 1.3rem;
+  padding-left: 1.35rem;
+}
+
+li {
+  margin-bottom: 0.55rem;
+  padding-left: 0.3rem;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+strong {
+  font-weight: 650;
+}
+
+/* Emphasized clarification, used sparingly */
+.note {
+  margin: 1.4rem 0;
+  padding: 1.05rem 1.2rem;
+  border: 1px solid var(--rule-strong);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  background: var(--card);
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+}
+
+.contact-chip {
+  font-family: var(--sans);
+  font-size: 0.92em;
+  padding: 0.14em 0.55em;
+  border: 1px solid var(--rule-strong);
+  border-radius: 7px;
+  background: var(--card);
+  white-space: nowrap;
+}
+
+.contact-chip:hover {
+  border-color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Index cards ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  display: block;
+  padding: 1.45rem 1.55rem;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 170ms ease, border-color 170ms ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.card-kicker {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.card-title {
+  margin: 0.35rem 0 0.55rem;
+  font-size: 1.42rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+
+.card-desc {
+  margin: 0 0 1.1rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.card-cta [aria-hidden] {
+  transition: transform 170ms ease;
+}
+
+.card:hover .card-cta [aria-hidden] {
+  transform: translateX(4px);
+}
+
+.page-meta {
+  margin-top: 2.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.9rem 1.25rem 3rem;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.site-footer-inner {
+  max-width: 62rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2.5rem;
+  justify-content: space-between;
+}
+
+.site-footer a {
+  color: var(--ink-soft);
+}
+
+.site-footer a:hover {
+  color: var(--accent-strong);
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    border-top: none;
+    font-size: 11pt;
+  }
+  .site-header,
+  .skip-link,
+  .site-nav {
+    display: none;
+  }
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+  .card {
+    box-shadow: none;
+    border-color: #999;
+  }
+  .note {
+    background: #fff;
+  }
+}
