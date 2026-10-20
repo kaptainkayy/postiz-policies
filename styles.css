@@ -426,3 +426,93 @@ a:hover {
     background: #fff;
   }
 }
+
+/* ---------- Homepage additions (index.html only; not used by policy pages) ---------- */
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.9rem;
+  font-family: var(--sans);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.62rem 1.15rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 170ms ease, color 170ms ease, background-color 170ms ease;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.btn-primary {
+  border-color: transparent;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-strong);
+  color: var(--on-accent);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1rem;
+  margin: 1.6rem 0 1.8rem;
+}
+
+.step {
+  padding: 1.35rem 1.45rem;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.step-num {
+  margin: 0 0 0.3rem;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.step-title {
+  margin: 0 0 0.55rem;
+  font-size: 1.12rem;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+
+.step-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.step-desc a {
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+@media (max-width: 30rem) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}

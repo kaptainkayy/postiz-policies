@@ -1,8 +1,8 @@
 # postiz-policies
 
-Public policy pages for KaptainKay's self-hosted Postiz installation.
+Public homepage and policy pages for KaptainKay's self-hosted Postiz installation.
 
-- `index.html` — landing page linking both documents
+- `index.html` — homepage describing the service, with links to both documents
 - `privacy.html` — Privacy Policy
 - `terms.html/index.html` — Terms of Service
 

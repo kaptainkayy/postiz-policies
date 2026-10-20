@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KaptainKay — Policies</title>
-  <meta name="description" content="Privacy Policy and Terms of Service for KaptainKay’s self-hosted Postiz installation. Effective October 19, 2026.">
+  <title>KaptainKay | Social media management</title>
+  <meta name="description" content="KaptainKay is a personal-use service that uses a self-hosted Postiz installation to prepare, schedule, and manage posts for social media accounts the operator owns or is authorized to manage.">
   <link rel="canonical" href="https://kaptainkayy.github.io/postiz-policies/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314594f'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23faf8f3' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
@@ -16,7 +16,7 @@
     <div class="site-header-inner">
       <a class="brand" href="index.html">KaptainKay</a>
       <nav class="site-nav" aria-label="Site">
-        <a href="index.html" aria-current="page">Policies</a>
+        <a href="index.html" aria-current="page">Overview</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html/">Terms</a>
       </nav>
@@ -25,34 +25,64 @@
 
   <main id="main" class="page">
     <div class="doc-header">
-      <p class="eyebrow">Legal</p>
-      <h1>Policies</h1>
-      <p class="lede">Policy pages for KaptainKay’s self-hosted Postiz installation, which manages and schedules content for social media accounts the operator owns or is authorized to manage.</p>
+      <p class="eyebrow">Personal-use service</p>
+      <h1>Social media management, run on self-hosted Postiz</h1>
+      <p class="lede">KaptainKay uses a self-hosted Postiz installation to prepare, schedule, and manage posts for social media accounts the operator owns or is authorized to manage. This page explains what the service is and how it works.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="privacy.html">Privacy Policy</a>
+        <a class="btn" href="terms.html/">Terms of Service</a>
+      </div>
     </div>
 
-    <div class="card-grid">
-      <a class="card" href="privacy.html">
-        <p class="card-kicker">Policy</p>
-        <h2 class="card-title">Privacy Policy</h2>
-        <p class="card-desc">What information the service handles, how it is used and stored, and how to request deletion.</p>
-        <span class="card-cta">Read the Privacy Policy <span aria-hidden="true">→</span></span>
-      </a>
+    <section>
+      <h2>What the service does</h2>
+      <p>Posts move through a simple workflow inside the operator&rsquo;s Postiz dashboard:</p>
+      <div class="steps-grid">
+        <div class="step">
+          <p class="step-num">Step 1</p>
+          <h3 class="step-title">Connect authorized accounts</h3>
+          <p class="step-desc">An account is linked through the platform&rsquo;s own authorization process, using the permissions that platform grants. Only accounts the operator owns or is authorized to manage are connected, and access can be revoked in the platform&rsquo;s settings at any time.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">Step 2</p>
+          <h3 class="step-title">Prepare content</h3>
+          <p class="step-desc">Posts, captions, and media for the connected accounts are prepared and organized in the dashboard ahead of time.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">Step 3</p>
+          <h3 class="step-title">Schedule and review</h3>
+          <p class="step-desc">Content is scheduled for a chosen time, and the published result is reviewed on the destination platform afterwards. Scheduling does not guarantee publication &mdash; outages, platform restrictions, and API limits can delay or prevent a post, as the <a href="terms.html/">Terms of Service</a> describe.</p>
+        </div>
+      </div>
+      <p>Which platforms the service can work with depends on the permissions each platform grants &mdash; the <a href="terms.html/">Terms of Service</a> list examples such as TikTok, Meta (Facebook and Instagram), Google (YouTube), and X.</p>
+    </section>
 
-      <a class="card" href="terms.html/">
-        <p class="card-kicker">Policy</p>
-        <h2 class="card-title">Terms of Service</h2>
-        <p class="card-desc">The rules that apply when using the service, including scheduling behavior and connected platforms.</p>
-        <span class="card-cta">Read the Terms of Service <span aria-hidden="true">→</span></span>
-      </a>
-    </div>
+    <section>
+      <h2>A private, operator-controlled service</h2>
+      <p>KaptainKay is a personal-use service. There is no public sign-up, no public app, and no customer accounts. The Postiz dashboard behind the service is a private deployment, controlled by the operator and reachable only by the authorized operator over a private network.</p>
+      <p>This page is public information about the service. It does not open the dashboard to visitors: reading it grants no access, approval, or right to use the service.</p>
+    </section>
 
-    <p class="page-meta">Both documents are effective October 19, 2026. Questions and requests: <a href="mailto:thekaptainkay@gmail.com">thekaptainkay@gmail.com</a>.</p>
+    <section>
+      <h2>Intended use with TikTok</h2>
+      <p>The service is intended to prepare and schedule video content for a TikTok account that the operator owns or is authorized to manage, using TikTok&rsquo;s platform interfaces. Any connection to TikTok, and any posting through it, requires TikTok&rsquo;s approval and the permissions TikTok grants.</p>
+      <div class="note">
+        <p>KaptainKay is not affiliated with, endorsed by, or certified by TikTok, and nothing on this page should be read as a statement that a TikTok account is currently connected or that TikTok has approved the service.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Questions about the service and requests under its policies can be sent to <a class="contact-chip" href="mailto:thekaptainkay@gmail.com">thekaptainkay@gmail.com</a>. Deletion and access requests are handled as described in the <a href="privacy.html">Privacy Policy</a>, and the rules for using the service are set out in the <a href="terms.html/">Terms of Service</a>.</p>
+    </section>
+
+    <p class="page-meta">Policies effective October 19, 2026. Questions and requests: <a href="mailto:thekaptainkay@gmail.com">thekaptainkay@gmail.com</a>.</p>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p style="margin:0"><a href="index.html">Policies</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html/">Terms of Service</a></p>
-      <p style="margin:0">KaptainKay · Contact: <a href="mailto:thekaptainkay@gmail.com">thekaptainkay@gmail.com</a> · Effective October 19, 2026</p>
+      <p style="margin:0"><a href="index.html">Overview</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html/">Terms of Service</a></p>
+      <p style="margin:0">KaptainKay · Contact: <a href="mailto:thekaptainkay@gmail.com">thekaptainkay@gmail.com</a> · Policies effective October 19, 2026</p>
     </div>
   </footer>
 </body>
